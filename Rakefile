@@ -38,7 +38,7 @@ task :link do
   entries.each do |file|
     orig_file = "#{$dotfiles_dir}/#{file}"
     target_file = "~/#{file}"
-    %x(rm #{target_file})
+    %x(rm -rf #{target_file})
     %x(ln -s #{orig_file} #{target_file})
   end
 end
