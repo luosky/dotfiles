@@ -9,6 +9,7 @@ $exclude = [
   '.',
   '..',
   '.git',
+  '.gitignore',
   '.rvmrc',
   'Rakefile',
   'README.md',
