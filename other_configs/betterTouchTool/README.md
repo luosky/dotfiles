@@ -1,0 +1,1 @@
+BetterTouchTool settings detailed in [here](http://luosky.com/2012/08/06/my-bettertouchtool-config/). Can be import directly. 

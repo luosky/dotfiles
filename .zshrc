@@ -32,12 +32,14 @@ ZSH_THEME="gentoo"
 plugins=(git ruby sublime autojump extract history-substring-search terminalapp osx mvn)
 
 source $ZSH/oh-my-zsh.sh
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 # Customize to your needs...
 export PATH=~/.rvm/gems/ruby-1.9.3-p194/bin:~/.rvm/gems/ruby-1.9.3-p194@global/bin:~/.rvm/rubies/ruby-1.9.3-p194/bin:~/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 
 # hash 目录
 hash -d aizheke="/Users/luosky/Documents/projs/aizheke3/aizheke"
+hash -d bread="/Users/luosky/Documents/projs/breadcoupon"
 hash -d proj="/Users/luosky/Documents/projs"
 hash -d blog="/Users/luosky/Dropbox/Sites/Luosky.com/octopress"
 
@@ -65,4 +67,3 @@ export LC_ALL=en_US.UTF-8
 
 #RVM:
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
