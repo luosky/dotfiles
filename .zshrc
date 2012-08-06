@@ -40,6 +40,7 @@ export PATH=~/.rvm/gems/ruby-1.9.3-p194/bin:~/.rvm/gems/ruby-1.9.3-p194@global/b
 # hash 目录
 hash -d aizheke="/Users/luosky/Documents/projs/aizheke3/aizheke"
 hash -d bread="/Users/luosky/Documents/projs/breadcoupon"
+hash -d lskToolkit="/Users/luosky/Documents/projs/LSKToolkit/"
 hash -d proj="/Users/luosky/Documents/projs"
 hash -d blog="/Users/luosky/Dropbox/Sites/Luosky.com/octopress"
 
