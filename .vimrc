@@ -16,6 +16,12 @@
 " 01. General                                                                "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible         " get rid of Vi compatibility mode. SET FIRST!
+" Enhance command-line completion
+set wildmenu
+" Enable per-directory .vimrc files and disable unsafe commands in them
+set exrc
+" Enable mouse in all modes
+set mouse=a
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Events                                                                 "
