@@ -23,6 +23,7 @@ alias laptop-left   move screenOriginX;screenOriginY                 screenSizeX
 alias laptop-right   move screenOriginX+screenSizeX/2;screenOriginY          screenSizeX/2;screenSizeY       ${laptop}
 alias laptop-main   move screenOriginX+screenSizeX*2/9;screenOriginY                       screenSizeX*7/9;screenSizeY       ${laptop}
 alias laptop-center move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${laptop}
+
 alias desktop-max   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY       ${desktop}
 alias desktop-main   move screenOriginX;screenOriginY                               screenSizeX*3/5;screenSizeY       ${desktop}
 alias desktop-weilark   move screenOriginX+screenSizeX*3/5;screenOriginY                screenSizeX*2/10;screenSizeY/2       ${desktop}
@@ -33,6 +34,7 @@ alias desktop-center move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/
 
 # 1 Monitor layout
 layout 1monitor 'iTerm':SORT_TITLE,REPEAT                ${laptop-max}
+layout 1monitor 'Chrome':REPEAT                   ${laptop-max}
 layout 1monitor 'Google Chrome':REPEAT                   ${laptop-max}
 layout 1monitor 'MacVim':REPEAT                          ${laptop-max}
 layout 1monitor 'Flex Builder':REPEAT                    ${laptop-max}
@@ -41,12 +43,14 @@ layout 1monitor 'Ooyala Player Debug Console':REPEAT     ${laptop-max}
 layout 1monitor 'QQ':REPEAT,TITLE_ORDER=QQ ${laptop-chat} | ${laptop-main}
 layout 1monitor 'Safari':REPEAT                         ${laptop-max}
 layout 1monitor 'Xcode':REPEAT                           ${laptop-max}
-
+layout 1monitor 'AppViz 2':REPEAT                           ${laptop-max}
+layout 1monitor 'Sublime Text 2':REPEAT                           ${laptop-max}
 
 # 2 Monitor layout
 layout 2monitors 'Xcode':REPEAT                           ${desktop-max}
-layout 2monitors 'iOS Simulator':REPEAT                           ${laptop-main}
-layout 2monitors 'SourceTree':REPEAT                           ${laptop-max}
+layout 2monitors 'iOS Simulator':REPEAT                           ${laptop-left}
+layout 2monitors 'Xee':REPEAT                           ${laptop-right}
+layout 2monitors 'SourceTree':REPEAT,TITLE_ORDER='Bookmarks' ${laptop-chat} | ${desktop-max}  | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} 
 layout 2monitors 'Safari':REPEAT                          ${laptop-max}
 layout 2monitors 'Chrome':REPEAT                          ${desktop-main}
 layout 2monitors 'Google Chrome':REPEAT                          ${desktop-main}
@@ -60,7 +64,7 @@ layout 2monitors 'Reeder':REPEAT                           ${laptop-max}
 layout 2monitors 'OmniFocus':REPEAT                           ${laptop-max}
 layout 2monitors 'iTunes':REPEAT                           ${laptop-max}
 layout 2monitors 'QQ':REPEAT,TITLE_ORDER=QQ ${laptop-chat} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main} | ${laptop-main}
-layout 2monitors 'Finder':REPEAT ${laptop-center}
+layout 2monitors 'Finder':REPEAT ${desktop-center}
 layout 2monitors 'Preview':REPEAT ${laptop-center}
 layout 2monitors 'Sparrow Lite':REPEAT ${laptop-center}
 layout 2monitors 'iTerm':REPEAT                ${desktop-max}
@@ -70,14 +74,14 @@ layout 2monitors 'MacVim':REPEAT                          ${laptop-max}
 layout 2monitors 'Flex Builder':REPEAT                    ${laptop-max}
 layout 2monitors 'GitX':REPEAT                            ${laptop-max}
 layout 2monitors 'Ooyala Player Debug Console':REPEAT     ${laptop-max}
-
+layout 2monitors 'AppViz 2':REPEAT                           ${laptop-max}
 
 
 
 
 # Layout Bindings	
-bind 3:ctrl,alt,cmd layout 2monitors
-
+bind 2:ctrl,alt,cmd layout 2monitors
+bind 1:ctrl,alt,cmd layout 1monitor
 #Move 
 bind c:ctrl,alt,cmd move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4
 #bind m:ctrl,alt,cmd move screenOriginX;screenOriginY   screenSizeX;screenSizeY 
