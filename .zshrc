@@ -43,6 +43,9 @@ hash -d bread="/Users/luosky/Documents/projs/breadcoupon"
 hash -d lskToolkit="/Users/luosky/Documents/projs/LSKToolkit/"
 hash -d proj="/Users/luosky/Documents/projs"
 hash -d blog="/Users/luosky/Dropbox/Sites/Luosky.com/octopress"
+hash -d aimeiwei="/Users/luosky/Documents/projs/aimeiwei/"
+hash -d slogger="/Users/luosky/Dropbox/applications/Mac/slogger"
+
 
 #alias ~blog="cd ~/Dropbox/Sites/Luosky.com/octopress"
 #alias ~proj="cd ~/Documents/projs"
