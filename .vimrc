@@ -22,6 +22,8 @@ set wildmenu
 set exrc
 " Enable mouse in all modes
 set mouse=a
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! %!sudo tee > /dev/null %
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 02. Events                                                                 "
