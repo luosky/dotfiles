@@ -7,7 +7,7 @@ config secondsBetweenRepeat 0.1
 config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 
-# Shows app icons and background apps, spreads icons in the same place.
+# Shows app icons and background apps, splreads icons in the same place.
 config windowHintsShowIcons true
 config windowHintsIgnoreHiddenWindows false
 config windowHintsSpread true
@@ -17,17 +17,22 @@ alias hyper ctrl;shift;alt;cmd
 alias showHint hint ASDFGHJKLQWERTYUIOPCVBN
 
 bind e:cmd ${showHint}
-bind r:${hyper} relaunch
+bind ':${hyper} relaunch
+
 
 #fast app switch
-bind x:${hyper} focus 'Xcode'
-bind f:${hyper} focus 'Finder'
-bind c:${hyper} focus 'Google Chrome'
-bind e:${hyper} focus 'Sublime Text 2'
-bind m:${hyper} focus 'Airmail'
-bind i:${hyper} focus 'iTunes'
-bind s:${hyper} focus 'SourceTree'
-bind o:${hyper} focus 'OmniFocus'
+bind c:${hyper} chain focus 'Google Chrome' | hide 'Google Chrome'
+bind e:${hyper} chain focus 'Sublime Text 2' | hide 'Sublime Text 2'
+bind d:${hyper} chain focus 'iOS Simulator' | hide 'iOS Simulator'
+bind f:${hyper} chain focus 'Finder' | hide 'Finder'
+bind i:${hyper} chain focus 'iTunes' | hide 'iTunes'
+bind m:${hyper} chain focus 'Airmail' | hide 'Airmail'
+bind o:${hyper} chain focus 'OmniFocus' | hide 'OmniFocus'
+bind p:${hyper} chain focus 'Xee' | hide 'Xee'
+bind s:${hyper} chain focus 'SourceTree' | hide 'SourceTree'
+bind w:${hyper} chain focus 'Miao' | hide 'Miao'
+bind x:${hyper} chain focus 'Xcode' | hide 'Xcode'
+
 
 # Monitor Aliases
 alias laptop   1280x800
@@ -42,6 +47,9 @@ default vmonitors resolutions:${laptop};${vdesk}
 default 1monitor  resolutions:${laptop}
 
 # Position Aliases
+alias size-main move screenOriginX;screenOriginY  screenSizeX*3/5;screenSizeY
+alias size-other move screenOriginX+screenSizeX*3/5;screenOriginY  screenSizeX*2/5;screenSizeY
+
 alias laptop-chat  move screenOriginX;screenOriginY                               screenSizeX*2/9;screenSizeY       ${laptop}
 alias laptop-max   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY       ${laptop}
 alias laptop-left   move screenOriginX;screenOriginY                 screenSizeX/2;screenSizeY       ${laptop}
@@ -50,7 +58,8 @@ alias laptop-main   move screenOriginX+screenSizeX*2/9;screenOriginY            
 alias laptop-center move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${laptop}
 
 alias desktop-max   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY       ${desktop}
-alias desktop-main   move screenOriginX;screenOriginY                               screenSizeX*3/5;screenSizeY       ${desktop}
+alias desktop-main   ${size-main} ${desktop}
+alias desktop-other  ${size-other} ${desktop}
 alias desktop-weilark   move screenOriginX+screenSizeX*3/5;screenOriginY                screenSizeX*2/10;screenSizeY/2       ${desktop}
 alias desktop-right-up   move screenOriginX+screenSizeX*3/5;screenOriginY                screenSizeX*2/5;screenSizeY/2       ${desktop}
 alias desktop-right-down   move screenOriginX+screenSizeX*3/5;screenOriginY+screenSizeY/2                screenSizeX*2/5;screenSizeY/2       ${desktop}
@@ -64,10 +73,6 @@ alias vdesk-top-center move screenOriginX+screenSizeX/3;screenOriginY+screenSize
 layout 1monitor 'iTerm':SORT_TITLE,REPEAT                	${laptop-max}
 #layout 1monitor 'Chrome':REPEAT                   			${laptop-max}
 layout 1monitor 'Google Chrome':REPEAT                   	${laptop-max}
-layout 1monitor 'MacVim':REPEAT                          	${laptop-max}
-layout 1monitor 'Flex Builder':REPEAT                    	${laptop-max}
-layout 1monitor 'GitX':REPEAT                            	${laptop-max}
-layout 1monitor 'Ooyala Player Debug Console':REPEAT     	${laptop-max}
 layout 1monitor 'QQ':REPEAT,TITLE_ORDER=QQ 					${laptop-chat} | ${laptop-main}
 layout 1monitor 'Safari':REPEAT                         	${laptop-max}
 layout 1monitor 'Xcode':REPEAT                           	${laptop-max}
@@ -77,8 +82,10 @@ layout 1monitor 'Sublime Text 2':REPEAT                     ${laptop-max}
 # 2 Monitor layout
 layout 2monitors 'Xcode':REPEAT                           	${desktop-max}
 layout 2monitors 'iTerm':REPEAT                				${desktop-max}
+layout 2monitors 'Sublime Text 2':REPEAT                     ${desktop-max}
 layout 2monitors 'SourceTree':REPEAT,TITLE_ORDER='Bookmarks' ${laptop-chat} | ${desktop-max}  | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} | ${desktop-max} 
 layout 2monitors 'Google Chrome':REPEAT                     ${desktop-main}
+layout 2monitors 'Scrivener':REPEAT                     ${desktop-main} | ${desktop-other} | ${desktop-other} | ${desktop-other}
 layout 2monitors 'Finder':REPEAT 							${desktop-center}
 
 #sns:
@@ -138,7 +145,7 @@ bind 1:ctrl,alt,cmd layout 1monitor
 
 #Move 
 bind c:ctrl,alt,cmd move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4
-#bind m:ctrl,alt,cmd move screenOriginX;screenOriginY   screenSizeX;screenSizeY 
+bind m:ctrl,alt,cmd move screenOriginX;screenOriginY   screenSizeX;screenSizeY 
 
 
 #bind l:ctrl,alt,cmd move screenOriginX;screenOriginY   screenSizeX/2;screenSizeY ${laptop}
