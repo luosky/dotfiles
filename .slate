@@ -21,12 +21,13 @@ bind ':${hyper} relaunch
 
 
 #fast app switch
+bind b:${hyper} chain focus 'Google Chrome' | hide 'Google Chrome'
 bind c:${hyper} chain focus 'Google Chrome' | hide 'Google Chrome'
 bind e:${hyper} chain focus 'Sublime Text 2' | hide 'Sublime Text 2'
 bind d:${hyper} chain focus 'iOS Simulator' | hide 'iOS Simulator'
 bind f:${hyper} chain focus 'Finder' | hide 'Finder'
 bind i:${hyper} chain focus 'iTunes' | hide 'iTunes'
-bind m:${hyper} chain focus 'Airmail' | hide 'Airmail'
+bind m:${hyper} chain focus 'AirMail Beta' | hide 'AirMail Beta'
 bind o:${hyper} chain focus 'OmniFocus' | hide 'OmniFocus'
 bind p:${hyper} chain focus 'Xee' | hide 'Xee'
 bind s:${hyper} chain focus 'SourceTree' | hide 'SourceTree'
